@@ -8,8 +8,8 @@
     baseUrl: './',
     optimize: 'none',
     paths: {
-      'mockup-bundles-handsontable': 'js/bundles/handsontable',
-      'mockup-patterns-handsontable': 'patterns/handsontable/pattern',
+      'mockup-bundles-handsontable': 'js/js/bundles/handsontable',
+      'mockup-patterns-handsontable': 'js/patterns/handsontable/pattern',
       // FRAMEWORK DEPENDENCIES
       'expect': 'bower_components/expect/index',
       'jquery': 'bower_components/jquery/dist/jquery',
