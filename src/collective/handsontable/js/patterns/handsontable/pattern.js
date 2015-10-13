@@ -37,7 +37,7 @@ define([
     parser: 'mockup',
     trigger: '.pat-handsontable',  // has to be exact like this: 'pat-' + patternname.
     defaults: {
-      demo_data: null
+      data_src: '@@json-data'
     },
     init: function () {
       var self = this;
@@ -50,11 +50,11 @@ define([
         contextMenu: true
       });
 
-      if (self.options.demo_data){
-        if (self.options.demo_data === "example1"){
-          var data = Handsontable.helper.createSpreadsheetData(100, 12);
-          hot.loadData(data);
-        }
+      if (self.options.data_src){
+        $.ajax({url: self.options.data_src}).done(
+          function(data){
+            hot.loadData(data);
+          });
       }
 
     }
