@@ -8,7 +8,7 @@
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
 
-  <div class="pat-handsontable">uh - what?</div>
+  <div class="pat-handsontable" data-pat-handsontable='{"data_src": "++plone++handsontable/demo_data/example-dict.json"}'></div>
 
 </metal:block>
 </metal:content-core>
