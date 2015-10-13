@@ -22,7 +22,7 @@
  *
  * Example: example-2
  *    <div class="pat-handsontable" data-pat-handsontable='{"text": "whats up?"}'></div>
- * 
+ *
  */
 
 define([
@@ -41,20 +41,19 @@ define([
     },
     init: function () {
       var self = this;
+      var hot = new Handsontable(self.$el[0], {
+        height: 396,
+        colHeaders: true,
+        rowHeaders: true,
+        stretchH: 'all',
+        columnSorting: true,
+        contextMenu: true
+      });
+
       if (self.options.demo_data){
         if (self.options.demo_data === "example1"){
           var data = Handsontable.helper.createSpreadsheetData(100, 12);
-
-          var hot = new Handsontable(self.$el[0], {
-            data: data,
-            height: 396,
-            colHeaders: true,
-            rowHeaders: true,
-            stretchH: 'all',
-            columnSorting: true,
-            contextMenu: true
-          });
-
+          hot.loadData(data);
         }
       }
 
