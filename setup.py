@@ -1,8 +1,10 @@
 from setuptools import find_packages
 from setuptools import setup
 import json
+import os
 
-package_json = json.load(open('package.json'))
+package_json = json.load(open(os.path.join(
+    'src', 'collective', 'handsontable', 'package.json')))
 version = package_json['version']
 
 setup(
