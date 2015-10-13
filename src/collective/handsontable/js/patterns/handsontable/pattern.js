@@ -37,6 +37,7 @@ define([
     parser: 'mockup',
     trigger: '.pat-handsontable',  // has to be exact like this: 'pat-' + patternname.
     defaults: {
+      data_save: '@@json-save',
       data_src: '@@json-data'
     },
     init: function () {
@@ -50,13 +51,31 @@ define([
       };
 
       self.hot = new Handsontable(self.$el[0], {
-        height: 296,
+        // height: 296,
         colHeaders: colHeaders,
         rowHeaders: true,
         stretchH: 'all',
         columnSorting: true,
         contextMenu: true
       });
+
+      // Create a save button.
+      var save_button = document.createElement("input");
+      save_button.type = "submit";
+      save_button.value = "Save";
+      save_button.onclick = function() {
+        if (self.options.data_save) {
+          $.ajax({url: self.options.data_save}).done(
+            function(data) {
+              console.log("Successfully sent data to server.");
+              console.log(data);
+            }).fail(function (data, status) {
+              console.log(status + " Error while sending data to server.");
+              console.log(data);
+            });
+        }
+      };
+      $(save_button).insertAfter(self.$el[0]);
 
       if (self.options.data_src) {
         $.ajax({url: self.options.data_src}).done(
