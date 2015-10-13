@@ -1,0 +1,7 @@
+include *.rst
+recursive-include src *
+prune src/pat-handsontable/js/bower_components
+prune src/pat-handsontable/js/build
+exclude .bowerrc
+exclude Makefile
+global-exclude *.pyc

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<registry>
+  <records remove="True" prefix="plone.resources/mockup-patterns-handsontable" interface='Products.CMFPlone.interfaces.IResourceRegistry'/>
+  <records remove="True" prefix="plone.resources/mockup-bundles-handsontable"  interface='Products.CMFPlone.interfaces.IResourceRegistry'/>
+  <records remove="True" prefix="plone.bundles/handsontable"                   interface='Products.CMFPlone.interfaces.IBundleRegistry'/>
+</registry>

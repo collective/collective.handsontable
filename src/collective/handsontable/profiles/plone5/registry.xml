@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<registry>
+
+  <records prefix="plone.resources/mockup-patterns-handsontable"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+      <value key="js">++plone++handsontable/patterns/handsontable/pattern.js</value>
+      <value key="css">
+        <element>++plone++handsontable/patterns/handsontable/pattern.handsontable.less</element>
+      </value>
+  </records>
+
+  <records prefix="plone.bundles/handsontable"
+            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources">
+      <element>mockup-patterns-handsontable</element>
+      <element>mockup-patterns-select2</element>
+    </value>
+    <value key="depends">plone</value>
+    <value key="enabled">True</value>
+    <value key="compile">True</value>
+  </records>
+
+
+  <records
+      remove="True"
+      prefix="plone.resources/mockup-bundles-handsontable"
+      interface='Products.CMFPlone.interfaces.IResourceRegistry'/>
+
+</registry>
