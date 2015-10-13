@@ -2,7 +2,8 @@
   "name": "pat-handsontable",
   "description": "Minimal pattern for learning pattern creation",
   "dependencies": {
-    "mockup": "master"
+    "mockup": "master",
+    "handsontable": "0.19.0"
   },
   "devDependencies": {
     "expect": "0.3.1",

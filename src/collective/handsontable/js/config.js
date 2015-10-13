@@ -10,6 +10,10 @@
     paths: {
       'mockup-bundles-handsontable': 'js/js/bundles/handsontable',
       'mockup-patterns-handsontable': 'js/patterns/handsontable/pattern',
+      // libs
+      'handsontable': 'bower_components/handsontable/dist/handsontable.full.min',
+      'moment': 'bower_components/moment/moment',
+      'pikaday': 'bower_components/pikaday/pikaday',
       // FRAMEWORK DEPENDENCIES
       'expect': 'bower_components/expect/index',
       'jquery': 'bower_components/jquery/dist/jquery',

@@ -26,21 +26,39 @@
  */
 
 define([
+  'jquery',
   'pat-base',
-  'jquery'
-], function (Base, $) {
+  'handsontable'
+], function ($, Base, Handsontable) {
   'use strict';
 
-  var Handsontable = Base.extend({
+  var PatHandsontable = Base.extend({
     name: 'handsontable',
+    parser: 'mockup',
     trigger: '.pat-handsontable',  // has to be exact like this: 'pat-' + patternname.
     defaults: {
-      text: 'Super Duper!'
+      demo_data: null
     },
     init: function () {
       var self = this;
-      self.$el.html(self.options.text);
+      if (self.options.demo_data){
+        if (self.options.demo_data === "example1"){
+          var data = Handsontable.helper.createSpreadsheetData(100, 12);
+
+          var hot = new Handsontable(self.$el[0], {
+            data: data,
+            height: 396,
+            colHeaders: true,
+            rowHeaders: true,
+            stretchH: 'all',
+            columnSorting: true,
+            contextMenu: true
+          });
+
+        }
+      }
+
     }
   });
-  return Handsontable;
+  return PatHandsontable;
 });
