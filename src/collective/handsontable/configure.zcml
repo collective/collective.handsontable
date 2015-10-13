@@ -5,6 +5,7 @@
            xmlns:zcml="http://namespaces.zope.org/zcml">
 
   <include package="plone.resource" file="meta.zcml"/>
+  <include package="Products.CMFCore"/>
   <plone:static
       directory="js"
       type="plone"
@@ -22,6 +23,14 @@
       for="*"
       template="handsontabledemo.pt"
       permission="zope2.View"
+      />
+
+  <browser:page
+      name="json-save"
+      for="*"
+      class=".browser.Save"
+      attribute="save"
+      permission="cmf.ModifyPortalContent"
       />
 
   <!-- Plone 5 profiles -->

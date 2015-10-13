@@ -65,13 +65,12 @@ define([
       save_button.value = "Save";
       save_button.onclick = function() {
         if (self.options.data_save) {
-          $.ajax({url: self.options.data_save}).done(
+          // WIP: We might not be sending the correct data.
+          $.ajax({url: self.options.data_save, method: "POST", data: self.hot.getData()}).done(
             function(data) {
-              console.log("Successfully sent data to server.");
-              console.log(data);
+              alert("Successfully sent data to server.");
             }).fail(function (data, status) {
-              console.log(status + " Error while sending data to server.");
-              console.log(data);
+              alert(status + " Error while sending data to server.");
             });
         }
       };
